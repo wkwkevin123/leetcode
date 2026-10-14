@@ -1,10 +1,10 @@
 # leetcode
 Improve algorithm skills
-# 刷题计划
+## 刷题计划
 
 每天刷三道算法题：力扣每日一题+题库按顺序2题。要写一下自己的解题心得。必要的时候可以计时。
 
-## 9月9日
+### 9月9日
 
 #### [3871. 统计范围内的逗号 II](https://leetcode.cn/problems/count-commas-in-range-ii/)
 
@@ -24,7 +24,7 @@ $\\color{red}{\text{时间：1min30s。独立思考}}$
 
 $\\color{red}{\text{时间：7min36s。独立思考}}$
 
-## 9月10日
+### 9月10日
 
 #### [2265. 统计值等于子树平均值的节点数](https://leetcode.cn/problems/count-nodes-equal-to-average-of-subtree/)
 
@@ -44,7 +44,7 @@ $\\color{red}{\text{时间：2min41s。独立思考}}$
 
 $\\color{red}{\text{时间：第二个想法29min39s，独立思考。第一个想法9min，独立思考。第三个想法没写出来。第四种解法自己没想到，看了题解才懂}}$
 
-## 9月11日
+### 9月11日
 
 #### [3483. 不同三位偶数的数目](https://leetcode.cn/problems/unique-3-digit-even-numbers/)
 
@@ -64,7 +64,7 @@ $\\color{red}{\text{时间：中心扩展法5min左右。独立思考}}$
 
 $\\color{red}{\text{时间：代码很快写出来了，debug用了很久。独立思考}}$
 
-## 9月12日
+### 9月12日
 
 #### [3414. 不重叠区间的最大得分](https://leetcode.cn/problems/maximum-score-of-non-overlapping-intervals/)
 
@@ -94,7 +94,7 @@ $\\color{red}{\text{时间：5min35s}}$
 
 $\\color{red}{\text{时间：7min18s}}$
 
-## 9月14日
+### 9月14日
 
 #### [836. 矩形重叠](https://leetcode.cn/problems/rectangle-overlap/)
 
@@ -114,7 +114,7 @@ $\\color{red}{\text{时间：3min04s。独立思考}}$
 
 $\\color{red}{\text{时间：43min。看了题解}}$
 
-## 9月15日
+### 9月15日
 
 #### [2472. 不重叠回文子字符串的最大数目](https://leetcode.cn/problems/maximum-number-of-non-overlapping-palindrome-substrings/)
 
@@ -139,7 +139,7 @@ $\\color{red}{\text{时间：1min49s。看了题解}}$
 
 $\\color{red}{\text{时间：12min53s。独立思考}}$
 
-## 9月16日
+### 9月16日
 
 #### [1621. 大小为 K 的不重叠线段的数目](https://leetcode.cn/problems/number-of-sets-of-k-non-overlapping-line-segments/)
 
@@ -159,7 +159,7 @@ $\\color{red}{\text{时间：4min46s。独立思考}}$
 
 $\\color{red}{\text{时间：做的很快。独立思考}}$
 
-## 9月17日
+### 9月17日
 
 #### [1477. 找两个和为目标值且不重叠的子数组](https://leetcode.cn/problems/find-two-non-overlapping-sub-arrays-each-with-target-sum/)
 
@@ -179,7 +179,7 @@ $\\color{red}{\text{时间：做的很快。去重部分看了一下题解}}$
 
 $\\color{red}{\text{时间：做的很快。独立思考}}$
 
-## 9月18日
+### 9月18日
 
 #### [1520. 最多的不重叠子字符串](https://leetcode.cn/problems/maximum-number-of-non-overlapping-substrings/)
 
@@ -199,7 +199,7 @@ $\\color{red}{\text{时间：做的很快。独立思考}}$
 
 $\\color{red}{\text{时间：15min。独立思考}}$
 
-## 9月20日
+### 9月20日
 
 #### [3498. 字符串的反转度](https://leetcode.cn/problems/reverse-degree-of-a-string/)
 
@@ -219,7 +219,7 @@ $\\color{red}{\text{时间：第一种方法2min35s。独立思考}}$
 
 $\\color{red}{\text{时间：15min41s。结束条件看了一下题解}}$
 
-## 9月21日
+### 9月21日
 
 #### [3524. 求出数组的 X 值 I](https://leetcode.cn/problems/find-x-value-of-array-i/)
 
@@ -239,7 +239,7 @@ $\\color{red}{\text{时间：最小堆10min左右。独立思考}}$
 
 $\\color{red}{\text{时间：5min39s。独立思考}}$
 
-## 9月22日
+### 9月22日
 
 #### [3525. 求出数组的 X 值 II](https://leetcode.cn/problems/find-x-value-of-array-ii/)
 
@@ -259,7 +259,7 @@ $\\color{red}{\text{时间：写了很久。独立思考}}$
 
 $\\color{red}{\text{时间：2min46s。独立思考}}$
 
-## 9月23日
+### 9月23日
 
 #### [1658. 将 x 减到 0 的最小操作数](https://leetcode.cn/problems/minimum-operations-to-reduce-x-to-zero/)
 
@@ -279,7 +279,7 @@ $\\color{red}{\text{时间：很快。独立思考}}$
 
 $\\color{red}{\text{时间：很快。看了OI WIKI的KMP算法部分}}$
 
-## 9月24日
+### 9月24日
 
 #### [3550. 数位和等于下标的最小下标](https://leetcode.cn/problems/smallest-index-with-digit-sum-equal-to-index/)
 
@@ -304,7 +304,7 @@ $\\color{red}{\text{时间：调试了很久。看了题解}}$
 
 $\\color{red}{\text{时间：我的想法做的很快。独立思考。滑窗方法看了一下题解}}$
 
-## 9月28日
+### 9月28日
 
 #### [1614. 括号的最大嵌套深度](https://leetcode.cn/problems/maximum-nesting-depth-of-the-parentheses/)
 
@@ -324,7 +324,7 @@ $\\color{red}{\text{时间：思路想了很久，一直根据调试来改正自
 
 $\\color{red}{\text{时间：看了一下题解}}$
 
-## 9月30日
+### 9月30日
 
 #### [33. 搜索旋转排序数组](https://leetcode.cn/problems/search-in-rotated-sorted-array/)
 
@@ -338,7 +338,7 @@ $\\color{red}{\text{时间：看到题目一开始没思路。看了一下题解
 
 $\\color{red}{\text{时间：很快。之前了解过这两个函数如何进行转化}}$
 
-## 10月8日
+### 10月8日
 
 #### [1021. 删除最外层的括号](https://leetcode.cn/problems/remove-outermost-parentheses/)
 
@@ -358,7 +358,7 @@ $\\color{red}{\text{时间：非常快。独立思考。简单题}}$
 
 $\\color{red}{\text{时间：较快。独立思考。模拟过程有点繁琐}}$
 
-## 10月9日
+### 10月9日
 
 #### [1541. 平衡括号字符串的最少插入次数](https://leetcode.cn/problems/minimum-insertions-to-balance-a-parentheses-string/)
 
@@ -378,7 +378,7 @@ $\\color{red}{\text{时间：看了一下题解}}$
 
 $\\color{red}{\text{时间：迭代方法做的很快。独立思考}}$
 
-## 10月10日
+### 10月10日
 
 #### [2333. 最小差值平方和](https://leetcode.cn/problems/minimum-sum-of-squared-difference/)
 
@@ -404,7 +404,7 @@ $\\color{red}{\text{时间：回溯经典题。做的很快}}$
 
 $\\color{red}{\text{时间：回溯经典题。做的很快}}$
 
-## 10月12日
+### 10月12日
 
 #### [2897. 对数组执行操作使平方和最大](https://leetcode.cn/problems/apply-operations-on-array-to-maximize-sum-of-squares/)
 
@@ -433,7 +433,7 @@ $\\color{red}{\text{时间：做的很快，独立思考}}$
 
 $\\color{red}{\text{时间：方法一做的很快，方法二看了题解才会写}}$
 
-## 10月13日
+### 10月13日
 
 #### [3727. 最大交替平方和](https://leetcode.cn/problems/maximum-alternating-sum-of-squares/)
 
@@ -482,11 +482,11 @@ $dp[i][j]=dp[i-1][j]||dp[i][j-1]$
 
 $\\color{red}{\text{时间：独立完成，很快}}$
 
-# 计划调整
+## 计划调整
 
 力扣每日一题+题库按顺序3题。多加一题，要是遇到困难题想太久可以只做两题。
 
-## 10月14日
+### 10月14日
 
 #### [3723. 数位平方和的最大值](https://leetcode.cn/problems/maximize-sum-of-squares-of-digits/)
 
