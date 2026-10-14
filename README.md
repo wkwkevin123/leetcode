@@ -82,7 +82,7 @@ Improve algorithm skills
 
 不断循环取模，得到反转整数。注意先判断是否是负数，再用abs函数转化为正数进行求解。要先判断是否越界再进行运算。注意判断溢出如果不能使用long long的话使用如下方法：
 
-![image-20260918113038730](C:\Users\dell\AppData\Roaming\Typora\typora-user-images\image-20260918113038730.png)
+![image-20260918113038730](https://github.com/wkwkevin123/leetcode/blob/main/images/image-20260918113038730.png)
 
 <font color='red'>时间：5min35s</font>
 
@@ -90,7 +90,7 @@ Improve algorithm skills
 
 遇到空格，跳过；遇到正号或者负号或者数字，循环看下一个字符直到不是数字为止，退出；遇到其他字符，退出。不能使用long long的话先按照下面方法判断是否越界，再进行运算：
 
-![image-20260918113222351](C:\Users\dell\AppData\Roaming\Typora\typora-user-images\image-20260918113222351.png)
+![image-20260918113222351](https://github.com/wkwkevin123/leetcode/blob/main/images/image-20260918113222351.png)
 
 <font color='red'>时间：7min18s</font>
 
