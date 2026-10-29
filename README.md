@@ -837,3 +837,30 @@ $\\color{red}{\text{时间：写的比较快。独立思考。}}$
 我的做法是使用一个变量$`flag`$来维护还能不能有相同的元素，类似[26. 删除有序数组中的重复项](https://leetcode.cn/problems/remove-duplicates-from-sorted-array/)，左指针$`left`$指向去重后的最后一个元素，右指针$`right`$指向要处理的元素，如果$`nums[right]==nums[right-1]`$，如果$`flag==true`$，令$`nums[left++]=nums[right]`$并且$`flag=false`$；否则令$`nums[left++]=nums[right]`$并重置$`flag=true`$。最后返回$`left`$即为去重后的个数。但是这种方法只能处理$`k==2`$的情况，看了题解发现可以使用栈，先把前$`k`$个元素压入栈中，如果当前元素和栈顶下第$`k`$个元素不相同，则压入栈中。这里可以用原数组代替栈。这样就能处理最多出现$`k`$次的题目了。
 
 $\\color{red}{\text{时间：很快。独立思考。}}$
+
+### 10月29日
+
+#### [3841. 查询树上回文路径](https://leetcode.cn/problems/palindromic-path-queries-in-a-tree/)
+
+> [!TIP]
+> 这道题没有写出来，时间复杂度不过关。我只想到了两点，首先利用$`dfs`$找到路径那条唯一路径，然后判断是否可重新排列为回文。能重新排列为回文要满足奇数字符的个数要小于等于$`1`$。注意字符串以空格分割可以使用$`stringstream`$。这道题的前置知识很多，有时间可以研究一下这道题。
+
+$\\color{red}{\text{没有做出来。}}$
+
+#### [81. 搜索旋转排序数组 II](https://leetcode.cn/problems/search-in-rotated-sorted-array-ii/)
+
+**类似[33. 搜索旋转排序数组](https://leetcode.cn/problems/search-in-rotated-sorted-array/) ,这道题中数组元素可能重复。这样可能存在第三种情况，当$`nums[left]==nums[mid]\&\&nums[mid]==nums[right]`$时无法判断哪边有序，此时可以让$`left++,right--`$，其余情况按照33题处理即可。**
+
+$\\color{red}{\text{时间：很快。看了一点题解。}}$
+
+#### [82. 删除排序链表中的重复元素 II](https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/)
+
+这道题不保留有重复元素的数，可以使用三个指针：前中后指针。如果中指针和后指针所指元素值相等，就需要不断移动后指针让它们值不相等，然后让前指针的$`next`$指向后指针，然后更新中指针为后指针，后指针后移一位；否则更新前指针为中指针，更新中指针为后指针，后指针后移一位。
+
+$\\color{red}{\text{时间：写了挺久的。独立思考。}}$
+
+#### [83. 删除排序链表中的重复元素](https://leetcode.cn/problems/remove-duplicates-from-sorted-list/)
+
+这道题是[82. 删除排序链表中的重复元素 II](https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/)的简单版本，只需要使用两个指针，互为前后关系，如果后指针的值和前指针相等，就删除后指针所指元素并让后指针后移一位；否则，让前指针等于后指针，后指针后移一位。
+
+$\\color{red}{\text{时间：很快。独立思考。}}$
