@@ -864,3 +864,61 @@ $\\color{red}{\text{时间：写了挺久的。独立思考。}}$
 这道题是[82. 删除排序链表中的重复元素 II](https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/)的简单版本，只需要使用两个指针，互为前后关系，如果后指针的值和前指针相等，就删除后指针所指元素并让后指针后移一位；否则，让前指针等于后指针，后指针后移一位。
 
 $\\color{red}{\text{时间：很快。独立思考。}}$
+
+### 10月30日
+
+#### [3970. 最多 K 个连续相同字符的最短路径](https://leetcode.cn/problems/shortest-path-with-at-most-k-consecutive-identical-characters/)
+
+> [!WARNING]
+> 待做
+
+#### [84. 柱状图中最大的矩形](https://leetcode.cn/problems/largest-rectangle-in-histogram/)
+
+这道题和[42. 接雨水](https://leetcode.cn/problems/trapping-rain-water/)非常类似，不同的是这题要维护的是一个递增的单调栈。当有元素出栈时，出栈元素就是矩形的高，出栈后的新栈顶元素就是矩形的左边界，当前遍历的元素就是矩形的右边界。掌握到这个规律后就和接雨水那题没什么区别了。
+
+$\\color{red}{\text{时间：看了一会题解。对单调栈的理解还不是很深。}}$
+
+#### [85. 最大矩形](https://leetcode.cn/problems/maximal-rectangle/)
+
+枚举矩形的底边，做n次[84. 柱状图中最大的矩形](https://leetcode.cn/problems/largest-rectangle-in-histogram/)。
+
+$\\color{red}{\text{时间：之前做过还有点印象。这个转化不好想啊}}$
+
+#### [86. 分隔链表](https://leetcode.cn/problems/partition-list/)
+
+这道题可以新建两个指针，一个是小于$`x`$的指针$`head1`$，一个是大于等于$`x`$的指针$`head2`$，最后让$`head1`$的结尾指向$`head2`$即可。
+
+$\\color{red}{\text{时间：很快。链表新建一个节点空间很小，不用担心空间复杂度的问题。}}$
+
+### 11月1日
+
+#### [453. 最小操作次数使数组元素相等](https://leetcode.cn/problems/minimum-moves-to-equal-array-elements/)
+
+这道题要学会转换，$`n-1`$个元素都加一的效果是只有一个元素减一，所以最少次数是让每个元素都减到这个数组的最小值。遍历两次，第一次找最小值，第二次计算每个元素和最小值的差值。
+
+$\\color{red}{\text{时间：很快。独立思考。想到转化了就不难}}$
+
+#### [87. 扰乱字符串](https://leetcode.cn/problems/scramble-string/)
+
+> [!WARNING]
+> 待做
+
+#### [88. 合并两个有序数组](https://leetcode.cn/problems/merge-sorted-array/)
+
+这道题可以使用双指针，但是我做的时候使用了额外的空间来保存$`nums1`$，更高效的做法是倒序遍历就可以省下这个额外空间。
+
+$\\color{red}{\text{时间：很快。独立思考。O(1)空间复杂度看了题解才想明白。}}$
+
+#### [89. 格雷编码](https://leetcode.cn/problems/gray-code/)
+
+**方法一：公式法：格雷码$`G_i`$的计算公式如下：$`G_i=i⊕(i/2)`$。方法二：构造法，已知$`G_{n-1}`$，先把$`G_{n-1}`$复制一份然后再最高位添加一位$`0`$，记为$`G^{'}_{n-1}`$。然后将$`G_{n-1}`$镜像再最高添加一位$`1`$，记为$`G^{''}_{n-1}`$。则$`G_n`$为$`G^{'}_{n-1}+G^{''}_{n-1}`$**。
+
+$\\color{red}{\text{看了题解}}$
+
+### 11月2日
+
+#### [462. 最小操作次数使数组元素相等 II](https://leetcode.cn/problems/minimum-moves-to-equal-array-elements-ii/)
+
+一次操作一个元素加一或者减一，让所有元素相等需要的最小操作数是当所有元素为数组中位数时，所以这道题首先需要排序找到中位数，然后再遍历计算每一个数和中位数差值的绝对值。
+
+$\\color{red}{\text{时间：很快。独立思考。想到转化了就不难}}$
