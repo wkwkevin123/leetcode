@@ -876,6 +876,8 @@ $\\color{red}{\text{时间：很快。独立思考。}}$
 > [!WARNING]
 > 待做
 
+
+
 #### [84. 柱状图中最大的矩形](https://leetcode.cn/problems/largest-rectangle-in-histogram/)
 
 这道题和[42. 接雨水](https://leetcode.cn/problems/trapping-rain-water/)非常类似，不同的是这题要维护的是一个递增的单调栈。当有元素出栈时，出栈元素就是矩形的高，出栈后的新栈顶元素就是矩形的左边界，当前遍历的元素就是矩形的右边界。掌握到这个规律后就和接雨水那题没什么区别了。
@@ -906,6 +908,10 @@ $\\color{red}{\text{时间：很快。独立思考。想到转化了就不难}}$
 
 > [!WARNING]
 > 待做
+
+**区间$`dp`$做法，定义$`dp[i][j][len]`$为$`s_1`$以$`i`$开始，长度为$`len`$的子字符串和$`s_2`$以$`j`$开始，长度为$`len`$的子字符串是否互为扰乱字符串。当长度为$`1`$时，直接判断字符是否相等。当长度大于$`1`$时，枚举分割位置$`k`$，则$`dp[i][j][len]=(dp[i][j][k]\&\&dp[i+k][j+k][len-k])||(dp[i][j+len-k][k]\&\&dp[i+k][j][len-k])`$。注意要先枚举$`len`$这一层，确保我们转移所需要的状态都已经被计算好。**
+
+$\\color{red}{\text{没做出来，看了题解。}}$
 
 #### [88. 合并两个有序数组](https://leetcode.cn/problems/merge-sorted-array/)
 
