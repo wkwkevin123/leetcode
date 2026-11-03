@@ -943,3 +943,28 @@ $\\color{red}{\text{时间：较快，独立思考。感觉方法和70题差不�
 [206. 反转链表](https://leetcode.cn/problems/reverse-linked-list/):这题是反转整个链表。
 
 $\\color{red}{\text{时间：很快，独立思考。反转整个链表的逻辑要熟练。}}$
+
+### 11月3日
+
+#### [3736. 最小操作次数使数组元素相等 III](https://leetcode.cn/problems/minimum-moves-to-equal-array-elements-iii/)
+
+这题和[453. 最小操作次数使数组元素相等](https://leetcode.cn/problems/minimum-moves-to-equal-array-elements/)类似。遍历两次，第一次找到数组的最大值，第二次计算最大值和数组中每个元素的差值。
+
+$\\color{red}{\text{时间：很快。简单题。}}$
+
+#### [93. 复原 IP 地址](https://leetcode.cn/problems/restore-ip-addresses/)
+
+回溯枚举三个$`.`$的位置，然后判断是否是有效$`IP`$。判断是否有效的方法是$`4`$个字串是否是有效数字，有效数字的判定和[91. 解码方法](https://leetcode.cn/problems/decode-ways/)类似。先把它转为整数$`num`$，如果它$`num \ge 256`$或者$`num==0\&\&s.length() \gt 1`$，返回$`false`$，其余情况返回$`true`$。
+
+$\\color{red}{\text{时间：较快。模拟性质的题}}$
+
+#### [94. 二叉树的中序遍历](https://leetcode.cn/problems/binary-tree-inorder-traversal/)
+
+做了几道相关的题：
++ [144. 二叉树的前序遍历](https://leetcode.cn/problems/binary-tree-preorder-traversal/)
++ [145. 二叉树的后序遍历](https://leetcode.cn/problems/binary-tree-postorder-traversal/)
+
+$\\color{red}{\text{时间：第一种方法很快。其余两种方法在慢慢消化}}$
+
+#### [95. 不同的二叉搜索树 II](https://leetcode.cn/problems/unique-binary-search-trees-ii/)
+
