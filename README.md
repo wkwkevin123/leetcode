@@ -58,6 +58,10 @@ $\\color{red}{\text{时间：4min29s。独立思考}}$
 
 **这道题我的想法是让每一个位置作为回文串的中心，向左右两边遍历。有两种情况，一种是中心只有一个，另一种是中心有两个。可以遍历两次分别进行讨论。看题解发现这种方法叫做中心扩展法。然后还有一种叫做动态规划的解法，用一个数组$`dp[i][j]`$记录i到j是否是回文串来避免重复计算。具体做法是可以枚举左右端点，如果$`s[l]==s[r]\&\&(r-l<=2||dp[l+1][r-1])`$，则$`dp[i][j]`$为true。注意这里要先枚举右端点再枚举左端点。因为$`dp[i][j]`$的确定要依靠$`dp[i+1][j-1]`$**
 
+做了几题类似的题目：
++ [516. 最长回文子序列](https://leetcode.cn/problems/longest-palindromic-subsequence/)
++ [647. 回文子串](https://leetcode.cn/problems/palindromic-substrings/)
+
 $\\color{red}{\text{时间：中心扩展法5min左右。独立思考}}$
 
 #### [6. Z 字形变换](https://leetcode.cn/problems/zigzag-conversion/)
@@ -960,6 +964,12 @@ $\\color{red}{\text{时间：较快。模拟性质的题}}$
 
 #### [94. 二叉树的中序遍历](https://leetcode.cn/problems/binary-tree-inorder-traversal/)
 
+方法一：递归。根据左根右的遍历顺序，先递归遍历左子树，然后将根节点放入结果集中，最后再遍历右子树。
+
+方法二：迭代。用栈来模拟递归的过程，从根节点出发，如果左子树存在，压入栈中并一直向左。然后将栈顶元素弹出加入结果集中，然后让指向其右子树。
+
+方法三：morris遍历。第一步是找$`root`$的前驱$`pre`$。具体方法是从$`root`$的左子树开始，一直向右走，直到走到尽头，或者遇到指向$`root`$的线索；如果$`root`$的左子树还没访问（表现为线索还没建立），将线索建立并访问左子树。当左子树访问完毕后去掉线索。左子树访问完毕后记录当前节点的值，如果有右子树就访问右子树，没有就顺着线索回到指向的节点。
+
 做了几道相关的题：
 + [144. 二叉树的前序遍历](https://leetcode.cn/problems/binary-tree-preorder-traversal/)
 + [145. 二叉树的后序遍历](https://leetcode.cn/problems/binary-tree-postorder-traversal/)
@@ -968,3 +978,6 @@ $\\color{red}{\text{时间：第一种方法很快。其余两种方法在慢慢
 
 #### [95. 不同的二叉搜索树 II](https://leetcode.cn/problems/unique-binary-search-trees-ii/)
 
+**可以采用递归的方式，从$`1`$到$`n`$中选择一个$`i`$作为根节点。则左子树为$`1`$到$`i-1`$，右子树为$`i+1`$到$`n`$。然后从可行左子树集合和可行右子树集合分别选一颗拼接到根节点上，最后将生成的二叉搜索树放入答案数组即可。**
+
+$\\color{red}{\text{时间：看了题解。自己想比较难想到。}}$
