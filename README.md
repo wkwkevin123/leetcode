@@ -1057,3 +1057,33 @@ $\\color{red}{\text{时间：很快，独立思考。}}$
 这道题的思路是只有当左子树和右子树互为镜像时，整棵树才是轴对称的。判断左右子树是否互为镜像的方法和[100. 相同的树](https://leetcode.cn/problems/same-tree/)类似，不过要对应的是左子树的左子树对应右子树的右子树；左子树的右子树对应右子树的左子树。
 
 $\\color{red}{\text{时间：看了一下题解。}}$
+
+### 11月6日
+
+#### [2747. 统计没有收到请求的服务器数目](https://leetcode.cn/problems/count-zero-request-servers/)
+
+这道题是离线的（可以把所有询问按照某种顺序处理，但不是按输入的顺序处理。与之对应的在线就是按照输入的顺序处理，来一个处理一个）。我的第一个想法就是昨天的每日一题[1385. 两个数组间的距离值](https://leetcode.cn/problems/find-the-distance-value-between-two-arrays/)的二分做法，先将日志按照时间顺序排序，然后将其按照服务器进行分类。对于每个询问，查询每个服务器在区间$`[queries[i]-x,queries[i]]`$是否有取值。但是这样的时间复杂度为$`O(q \times n \times log(m))`$，其中$`q`$为询问数组的长度，$`m`$为日志的长度，时间复杂度不能达到要求。然后认真思考了一会，发现可以使用滑动窗口，将询问和日志均按照时间顺序排序，对于一个新的询问$`queries[i]`$，则窗口内$`<queries[i]-x`$的数离开窗口；$`\le queries[i]`$的数进入窗口。同时维护每个服务器收到的请求数，服务器$`i`$收到的请求进入窗口，计数加一，如果加一前是零，把最终答案减一；服务器$`i`$收到的请求离开窗口，计数减一，如果减一后计数是零，把最终答案加一。这样做时间复杂度就是$`O(m\times log(m)+q \times log(q))`$，瓶颈主要在排序上。
+
+$\\color{red}{\text{时间：做了非常久。独立思考}}$
+
+#### [102. 二叉树的层序遍历](https://leetcode.cn/problems/binary-tree-level-order-traversal/)
+
+$`BFS`$遍历，用队列操作。如果根节点不为空，先把根节点放入队列中。一开始记录队列的长度，然后循环这些次数，将队列头部移出，如果其左子树不为空，将其左子树放入队列；如果其右子树不为空，将其右子树放入队列。最后统计答案即可。
+
+$\\color{red}{\text{时间：很快。独立思考。层序遍历已经很熟练了。}}$
+
+#### [103. 二叉树的锯齿形层序遍历](https://leetcode.cn/problems/binary-tree-zigzag-level-order-traversal/)
+
+和[102. 二叉树的层序遍历](https://leetcode.cn/problems/binary-tree-level-order-traversal/)类似，只需要额外一个变量记录是否需要反转，如果需要就将那一层反转。
+
+$\\color{red}{\text{时间：很快。独立思考。一开始想这按照遍历顺序访问节点，发现没有办法。}}$
+
+#### [104. 二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/)
+
+方法一：自底向上。如果$`root`$为空，返回深度为零。否则递归返回左子树深度和右子树深度的较大值加$`1`$。
+
+方法二：自顶向下。传递一个参数表示深度，每当递归到左子树或右子树时将深度加$`1`$。并使用一个全局变量记录答案，在深度变化时取深度的最大值。
+
+方法三：根据[102. 二叉树的层序遍历](https://leetcode.cn/problems/binary-tree-level-order-traversal/)，直接返回层序遍历结果的长度
+
+$\\color{red}{\text{时间：自底向上很快。独立思考。}}$
