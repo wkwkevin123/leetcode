@@ -1087,3 +1087,9 @@ $\\color{red}{\text{时间：很快。独立思考。一开始想这按照遍历
 方法三：根据[102. 二叉树的层序遍历](https://leetcode.cn/problems/binary-tree-level-order-traversal/)，直接返回层序遍历结果的长度
 
 $\\color{red}{\text{时间：自底向上很快。独立思考。}}$
+
+### 11月7日
+
+#### [1882. 使用服务器处理任务](https://leetcode.cn/problems/process-tasks-using-servers/)
+
+这道题要使用两个堆，第一个堆用来存放空闲服务器下标及其权重；第二个堆用来存放忙碌服务器下标及其服务器完成任务的时刻。初始化阶段先把所有服务器放入空闲堆。记录两个变量：当前时间$`t`$和正在遍历的任务下标$`cnt`$。
