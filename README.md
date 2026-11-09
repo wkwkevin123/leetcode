@@ -1092,4 +1092,80 @@ $\\color{red}{\text{时间：自底向上很快。独立思考。}}$
 
 #### [1882. 使用服务器处理任务](https://leetcode.cn/problems/process-tasks-using-servers/)
 
-这道题要使用两个堆，第一个堆用来存放空闲服务器下标及其权重；第二个堆用来存放忙碌服务器下标及其服务器完成任务的时刻。初始化阶段先把所有服务器放入空闲堆。记录两个变量：当前时间$`t`$和正在遍历的任务下标$`cnt`$。
+这道题要使用两个堆，第一个堆用来存放空闲服务器下标及其权重；第二个堆用来存放忙碌服务器下标及其服务器完成任务的时刻。记录两个变量：当前时间$`t`$和正在遍历的任务下标$`cnt`$。初始化阶段先把所有服务器放入空闲堆。然后进行循环，先根据当前时间$`t`$是否大于等于忙碌服务器的结束时间，如果是的话，将其转移到空闲服务器堆中，然后循环判断是否有空闲的服务器和未被分配服务器的任务，将空闲服务器分配给相应的任务。如果服务器全部忙碌，将时间$`t`$更新为忙碌服务器的最早结束时间，否则将$`t`$增加一秒。注意几个要注意的点：时间$`t`$要用$`long ~ long`$数据类型；忙碌服务器只需要两个关键变量即可。
+
+$\\color{red}{\text{时间：做了非常久，一些细节没有注意到。看了一点提示，其他独立思考。}}$
+
+#### [105. 从前序与中序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
+
+递归解法，将前序遍历的第一个数作为根，然后在中序遍历中找到根的位置下标$`index`$，中序遍历中$`[s2,index-1]`$是左子树的中序遍历，$`[index+1,e2]`$是右子树的中序遍历。前序遍历中$`[s1+1,s1+index-s2]`$是左子树的前序遍历，$`[s1+1+index-s2,e1]`$是右子树的前序遍历。然后递归的进行左右子树的还原。
+
+$\\color{red}{\text{时间：很快。独立思考。}}$
+
+#### [106. 从中序与后序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)
+
+类似[105. 从前序与中序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)，也是递归解法。将后序遍历的最后一个数作为根，然后在中序遍历中找到根的位置下标$`index`$，中序遍历中$`[s2,index-1]`$是左子树的中序遍历，$`[index+1,e2]`$是右子树的中序遍历。后续遍历中$`[s1,s1+index-s2-1]`$是左子树的后序遍历，$`[s1+index-s2,e1-1]`$是右子树的后续遍历。然后递归的进行左右子树的还原。
+
+注意已知前序遍历和后续遍历不能构造出唯一的二叉树。
+
+$\\color{red}{\text{时间：很快。独立思考。}}$
+
+#### [107. 二叉树的层序遍历 II](https://leetcode.cn/problems/binary-tree-level-order-traversal-ii/)
+
+和[102. 二叉树的层序遍历](https://leetcode.cn/problems/binary-tree-level-order-traversal/)类似，只需要将结果数组反转一下即可。
+
+$\\color{red}{\text{时间：很快。独立思考。}}$
+
+### 11月9日
+
+#### [1267. 统计参与通信的服务器](https://leetcode.cn/problems/count-servers-that-communicate/)
+
+使用两个数组分别记录每行服务器的数量和每列服务器的数量，然后遍历数组，如果$`grid[i][j]==1`$并且其所在行或者所在列的服务器数量大于$`1`$说明它可以与其他服务器通信，将答案加$`1`$。
+
+$\\color{red}{\text{时间：很快。独立思考。}}$
+
+#### [108. 将有序数组转换为二叉搜索树](https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/)
+
+递归解法。将数组的中点作为二叉树的根。然后左子树对应的数组是$`[s,mid-1]`$，右子树对应的数组是$`[mid+1,e]`$。然后递归的进行左右子树的还原。
+
+$\\color{red}{\text{时间：很快。独立思考。}}$
+
+#### [109. 有序链表转换二叉搜索树](https://leetcode.cn/problems/convert-sorted-list-to-binary-search-tree/)
+
+也是递归解法，使用快慢指针找到链表的中点$`slow`$和中点的前一个数$`pre`$，将中点对应的数作为根节点。如果链表的中点等于头节点，说明只有一个数，直接返回这个数；否则先记录下中点的$`next`$指针指向的数$`right`$，然后断开中点前一个数和中点的$`next`$指针，则左子树的头节点是$`head`$，右子树的头节点是$`right`$。然后递归的进行左右子树的还原。
+
+$\\color{red}{\text{时间：较快。只有一个数的情况考虑了好久。独立思考。}}$
+
+#### [110. 平衡二叉树](https://leetcode.cn/problems/balanced-binary-tree/)
+
+先根据[104. 二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/)，计算每棵树的最大深度，如果左子树的最大深度和右子树的最大深度的差值绝对值$`\le 1`$，就递归的判断左子树和右子树是否平衡。否则直接返回$`false`$。
+
+**看了题解发现可优化，可以在计算高度时就开始判断是不是平衡的，在计算高度时如果左子树返回$`-1`$或者右子树返回$`-1`$或者左右子树的高度差大于$`1`$，直接返回$`-1`$。**
+
+$\\color{red}{\text{时间：较快。独立思考。我的方法在递归中又有递归，两者逻辑相似，完全可以省略掉其中一个递归。}}$
+
+### 11月9日
+
+#### [1606. 找到处理最多请求的服务器](https://leetcode.cn/problems/find-servers-that-handled-most-number-of-requests/)
+
+> [!WARNING]
+> 待做
+
+#### [111. 二叉树的最小深度](https://leetcode.cn/problems/minimum-depth-of-binary-tree/)
+
+方法一：自顶向下。传递一个参数表示深度，每当递归到左子树或右子树时将深度加$`1`$。并使用一个全局变量记录答案，在左右子树均为空时（叶子节点）时取深度的最小值。
+
+**方法二：自底向上。注意对于非叶子节点，如果一个儿子时是空节点，另一个儿子不是空节点，那么答案只能来自非空的那一侧。所以要比[104. 二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/)多写两段逻辑。**
+
+$\\color{red}{\text{时间：自顶向下很快。独立思考。自底向上看了题解才想到。}}$
+
+#### [112. 路径总和](https://leetcode.cn/problems/path-sum/)
+
+递归解法，先将$`targetSum`$减去根节点的数，如果$`targetSum==0`$并且当前节点是左右子树均为空（叶子节点）时说明找打了正确路径，直接返回$`true`$，否则递归的在左右子树判断更新后$`targetSum`$值。
+
+$\\color{red}{\text{时间：写了较久。一开始逻辑没理顺。一开始应该先减去当前根节点的值再进行判断。}}$
+
+#### [113. 路径总和 II](https://leetcode.cn/problems/path-sum-ii/)
+
+> [!WARNING]
+> 待做
