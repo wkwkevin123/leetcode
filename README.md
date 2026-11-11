@@ -1205,3 +1205,25 @@ $\\color{red}{\text{时间：很快。独立思考}}$
 ### 11月11日
 
 #### [3789. 采购的最小花费](https://leetcode.cn/problems/minimum-cost-to-acquire-required-items/)
+
+当$`costBoth \ge (cost1+cost2)`$时，购买类型$`3`$不会更优；反之，当$`costBoth \lt (cost1+cost2)`$时，不可能同时存在物品$`1`$和物品$`2`$。即先用物品$`3`$让其中一种类型先满足要求，对于不满足要求的类型，要么买物品$`3`$，要么买和类型对应的物品，两种情况取最小值即可。注意要用$`long ~ long`$数据类型防止溢出。
+
+$\\color{red}{\text{时间：很快。独立思考。一开始以为第二种情况只需要买物品三，后来发现了错误。}}$
+
+#### [118. 杨辉三角](https://leetcode.cn/problems/pascals-triangle/)
+
+动态规划题。主要是想清楚状态转移方程：如果$`j==0||j==i`$，那么$`dp[i][j]=1`$，否则$`dp[i][j]=dp[i-1][j]+dp[i-1][j-1]`$。最后不要忘记使用$`resize`$函数把数组裁剪到合适的大小。
+
+$\\color{red}{\text{时间：很快。独立思考}}$
+
+#### [119. 杨辉三角 II](https://leetcode.cn/problems/pascals-triangle-ii/)
+
+只需要返回[118. 杨辉三角](https://leetcode.cn/problems/pascals-triangle/)答案的最后一行即可。
+
+$\\color{red}{\text{时间：很快。独立思考}}$
+
+#### [120. 三角形最小路径和](https://leetcode.cn/problems/triangle/)
+
+动态规划题。这道题的状态转移方程和[118. 杨辉三角](https://leetcode.cn/problems/pascals-triangle/)类似，为$`dp[i][j]=min(dp[i-1][j],dp[i-1][j-1])+triangle[i][j]`$。然后注意初始化第$`0`$列。还可以进行空间优化，不过需要注意的是内层循环应该从后往前遍历，防止覆盖。
+
+$\\color{red}{\text{时间：很快。独立思考}}$
