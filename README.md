@@ -1052,7 +1052,7 @@ $\\color{red}{\text{时间：看了一下题解。}}$
 
 $\\color{red}{\text{时间：很快，独立思考。}}$
 
-##### [101. 对称二叉树](https://leetcode.cn/problems/symmetric-tree/)
+#### [101. 对称二叉树](https://leetcode.cn/problems/symmetric-tree/)
 
 这道题的思路是只有当左子树和右子树互为镜像时，整棵树才是轴对称的。判断左右子树是否互为镜像的方法和[100. 相同的树](https://leetcode.cn/problems/same-tree/)类似，不过要对应的是左子树的左子树对应右子树的右子树；左子树的右子树对应右子树的左子树。
 
