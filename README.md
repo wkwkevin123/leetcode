@@ -1170,3 +1170,38 @@ $\\color{red}{\text{时间：写了较久。一开始逻辑没理顺。一开始
 这道题是[112. 路径总和](https://leetcode.cn/problems/path-sum/)的进阶版，还需要求出所有符合条件的路径。我的做法是使用一个数组$`path`$来记录路径，开始时将根节点的值加入路径，然后更新剩余目标，如果该节点左右子树均为空（叶子节点），将$`path`$加入到答案中。然后继续递归的遍历左右子树，只在递归完右子树后恢复现场。
 
 $\\color{red}{\text{时间：思考了很久，一直找不到恢复现场的合适时机。不断调试才找出来。独立思考。}}$
+
+### 11月10日
+
+#### [3693. 爬楼梯 II](https://leetcode.cn/problems/climbing-stairs-ii/)
+
+与[70. 爬楼梯](https://leetcode.cn/problems/climbing-stairs/)类似，这道题多了一步可以走3级台阶，成本计算方式也变了。这道题我使用的是刷表法，定义$`dp[i]`$表示从$`0`$爬到$`i`$的最小总成本，现在$`i`$的状态会影响$`i+1`$，$`i+2`$和$`i+3`$的状态。或者考虑最后一步爬了多少个台阶，则$`dfs[i]=min_{j=max(i-3,0)}^{i-1} dfs[j]+(i-j)^2+costs[i]`$
+
+$\\color{red}{\text{时间：很快。是70题的进阶版}}$
+
+#### [114. 二叉树展开为链表](https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/)
+
+> [!WARNING]
+> 待做
+
+#### [115. 不同的子序列](https://leetcode.cn/problems/distinct-subsequences/)
+
+动态规划题。定义$`dp[i][j]`$表示$`s[0:i]`$的子序列出现$`t[0:j]`$的个数。则可以得到下面的状态转移方程：当$`s[i]==t[j]`$时，$`dp[i][j]=dp[i-1][j-1]+dp[i-1][j]`$；当$`s[i]!=t[j]`$时，$`dp[i][j]=dp[i-1][j]`$。这里可以发现只和前一行的状态有关，所以可以使用空间优化，但是要注意应当和$`0-1`$背包一样，内层循环使用倒序枚举，防止值被覆盖。
+
+$\\color{red}{\text{时间：很快。但是空间优化卡了一下，没有想到倒序枚举。}}$
+
+#### [116. 填充每个节点的下一个右侧节点指针](https://leetcode.cn/problems/populating-next-right-pointers-in-each-node/)
+
+这道题使用的是层序遍历的思路，当当前元素出队列后，下一个队顶元素就是其右侧节点，不过需要注意的是每一层的最后一个元素右侧节点为$`NULL`$。所以可以在层序遍历的代码上，把加入结果部分修改为更新$`next`$的指向，注意只更新不是每层最后一个节点的元素。
+
+$\\color{red}{\text{时间：很快。独立思考。层序遍历的思路。}}$
+
+#### [117. 填充每个节点的下一个右侧节点指针 II](https://leetcode.cn/problems/populating-next-right-pointers-in-each-node-ii/)
+
+和[116. 填充每个节点的下一个右侧节点指针](https://leetcode.cn/problems/populating-next-right-pointers-in-each-node/)解法一致，代码搬运过来就能$`AC`$。
+
+$\\color{red}{\text{时间：很快。独立思考}}$
+
+### 11月11日
+
+#### [3789. 采购的最小花费](https://leetcode.cn/problems/minimum-cost-to-acquire-required-items/)
