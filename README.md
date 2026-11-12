@@ -1116,7 +1116,7 @@ $\\color{red}{\text{时间：很快。独立思考。}}$
 
 $\\color{red}{\text{时间：很快。独立思考。}}$
 
-### 11月9日
+### 11月8日
 
 #### [1267. 统计参与通信的服务器](https://leetcode.cn/problems/count-servers-that-communicate/)
 
