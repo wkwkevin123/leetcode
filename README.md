@@ -1259,4 +1259,6 @@ $\\color{red}{\text{时间：较快。看了一点提示。}}$
 
 #### [123. 买卖股票的最佳时机 III](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iii/)
 
-动态规划题。
+动态规划题。详细内容见[笔记](https://github.com/wkwkevin123/leetcode/blob/main/note/stock%20problems.docx)。还做了这道题的进阶版[188. 买卖股票的最佳时机 IV](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iv/)
+
+$\\color{red}{\text{时间：较快。看了一点提示。}}$
