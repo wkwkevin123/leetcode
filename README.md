@@ -1262,3 +1262,27 @@ $\\color{red}{\text{时间：较快。看了一点提示。}}$
 动态规划题。详细内容见[笔记](https://github.com/wkwkevin123/leetcode/blob/main/note/stock%20problems.docx)。还做了这道题的进阶版[188. 买卖股票的最佳时机 IV](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iv/)
 
 $\\color{red}{\text{时间：较快。看了一点提示。}}$
+
+### 11月13日
+
+#### [3420. 统计 K 次操作以内得到非递减子数组的数目](https://leetcode.cn/problems/count-non-decreasing-subarrays-after-k-operations/)
+
+> [!WARNING]
+> 待做
+
+#### [124. 二叉树中的最大路径和](https://leetcode.cn/problems/binary-tree-maximum-path-sum/)
+
+**递归解法，$`dfs`$遍历到每个节点时，把其视为转折点计算经过这个点的最大路径和$`root \rightarrow val+max(0,dfs(root \rightarrow left))+max(0,dfs(root \rightarrow right))`$。返回的是单链的最大路径和$`max(dfs(root \rightarrow left),dfs(root \rightarrow right))+ root \rightarrow val`$**
+
+$\\color{red}{\text{时间：看了题解。}}$
+
+#### [125. 验证回文串](https://leetcode.cn/problems/valid-palindrome/)
+
+我的做法是，只将小写字母，大写字母和数字写在一个字符串中，然后判断这个这个字符串是不是回文的。然后题解的做法是双指针，如果左指针不是三种之一，将左指针右移；如果右指针不是三种其中之一，将右指针左移；比较左指针和右指针小写化后是否相等，如果不相等直接返回$`false`$。
+
+$\\color{red}{\text{时间：很快，独立思考。}}$
+
+#### [126. 单词接龙 II](https://leetcode.cn/problems/word-ladder-ii/)
+
+#### [127. 单词接龙](https://leetcode.cn/problems/word-ladder/)
+
