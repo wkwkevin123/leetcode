@@ -1284,5 +1284,69 @@ $\\color{red}{\text{时间：很快，独立思考。}}$
 
 #### [126. 单词接龙 II](https://leetcode.cn/problems/word-ladder-ii/)
 
+**这道题的思路是先用$`BFS`$建图，然后使用回溯法找所有符合条件的路径。找邻居单词的时候可以让单词的每个字母逐个改动，生成$`25`$个新单词，选出存在于字典中的就是邻居单词。然后出现过的单词要及时从$`set`$中删去，避免重复访问。最后回溯的时候从终点词开始回溯，最后将结果逆序即可。**
+
+$\\color{red}{\text{时间：看了题解。主要考察将抽象问题建模，图的建立和回溯。}}$
+
 #### [127. 单词接龙](https://leetcode.cn/problems/word-ladder/)
 
+这道题简单一点，建立邻接表，然后从起点词开始做$`BFS`$找最短路径。这里我建立邻接表的方式是依次判断字典中的两个单词是否只差一个字母。看了题解发现可以将单词的每个字母逐个改动，然后判断改动后的单词是否在字典中以及是否被访问过来决定是否加入队列。
+
+$\\color{red}{\text{时间：独立思考。以后看到小写字母的题要想到枚举每一个字母而不是根据长度枚举。}}$
+
+### 11月16日
+
+#### [2243. 计算字符串的数字和](https://leetcode.cn/problems/calculate-digit-sum-of-a-string/)
+
+按照题意模拟即可。如果当前字符串的长度大于$`k`$，就$`k`$个一组计算每组的数字和，然后将所有组的数字和凭借在一起作为新的字符串。
+
+$\\color{red}{\text{时间：很快，独立思考。}}$
+
+#### [128. 最长连续序列](https://leetcode.cn/problems/longest-consecutive-sequence/)
+
+将整个数组存在$`set`$中，然后遍历它，如果遍历到某个数$`x`$，如果它的前一个数$`x-1`$也在当中，说明这个数一定不是起点，可以直接跳过它。否则的话，把它当作起点，一直寻找$`x+1`$是否存在，然后更新答案。
+
+$\\color{red}{\text{时间：很快，独立思考。}}$
+
+#### [129. 求根节点到叶节点数字之和](https://leetcode.cn/problems/sum-root-to-leaf-numbers/)
+
+我的做法是自顶向下，计算从根到当前节点的路径上所代表的数字。如果这个节点是叶子节点，就将这个数字加入到结果中。最后继续传递到左子树和右子树中。
+
+$\\color{red}{\text{时间：很快，独立思考。}}$
+
+#### [130. 被围绕的区域](https://leetcode.cn/problems/surrounded-regions/)
+
+反向思维，从边界出发$`DFS`$，将所有与边界连通的$`O`$变成一个特殊字符。最后遍历整个图，将特殊字符全部变成$`O`$，不是特殊字符变成$`X`$。边界可以按照步长来划分，最后一行和第一行的步长是$`1`$，其余行的步长是$`m-1`$。
+
+$\\color{red}{\text{时间：很快，独立思考。}}$
+
+### 11月17日
+
+#### [2911. 得到 K 个半回文串的最少修改次数](https://leetcode.cn/problems/minimum-changes-to-make-k-semi-palindromes/)
+
+> [!WARNING]
+> 待做
+
+#### [131. 分割回文串](https://leetcode.cn/problems/palindrome-partitioning/)
+
+我的做法是枚举分割的位置，选择$`[1:n-1]`$的所有子集，然后判断每一种情况是否都是回文子串。判断字串是否是回文子串可以动态规划预处理。$`dp[i][j]`$表示子串$`[i:j]`$是否是回文串。那么$`dp[i][j]=(s[i]==s[j])\&\&(dp[i+1][j-1])`$，注意遍历的时候$`i`$要逆向遍历，$`j`$要正向遍历，才能保证需要的状态已经提前得到。
+
+$\\color{red}{\text{时间：较快，独立思考。}}$
+
+#### [132. 分割回文串 II](https://leetcode.cn/problems/palindrome-partitioning-ii/)
+
+动态规划题。$`dp[i]`$表示以$`s[0:i]`$需要的分割次数，如果$`s[l:i]`$是回文串，那么$`dp[i]=min(dp[l]+1)`$，其中$`l \lt i`$。判断子串是否是回文串的方法和[131. 分割回文串](https://leetcode.cn/problems/palindrome-partitioning/)相同。
+
+$\\color{red}{\text{时间：较快，独立思考。}}$
+
+#### [133. 克隆图](https://leetcode.cn/problems/clone-graph/)
+
+### 11月18日
+
+#### [2914. 使二进制字符串变美丽的最少修改次数](https://leetcode.cn/problems/minimum-number-of-changes-to-make-binary-string-beautiful/)
+
+#### [134. 加油站](https://leetcode.cn/problems/gas-station/)
+
+#### [135. 分发糖果](https://leetcode.cn/problems/candy/)
+
+#### [136. 只出现一次的数字](https://leetcode.cn/problems/single-number/)
