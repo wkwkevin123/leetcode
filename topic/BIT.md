@@ -42,50 +42,30 @@
 
 现在我们要修改$`a[3]`$，因为$`tree[i]`$管理以$`i`$为右端点的一个区间，除了更新当前节点，还需要更新包含该区间的更大节点。节点$`i`$的直接父节点就是$`i+lowbit(i)`$，因此我们可以不断跳到父节点，直到超过数组长度。
 
-### python代码模板
+### C++代码模板
 ```
-class FenwickTree:
-    def __init__(self, n):
-        self.n = n
-        self.tree = [0] * (n + 1)
-
-    def lowbit(self, x):
-        return x & -x
-
-    # 将第 i 个元素增加 delta
-    def update(self, i, delta):
-        while i <= self.n:
-            self.tree[i] += delta
-            i += self.lowbit(i)
-
-    # 查询 [1, i] 的前缀和
-    def query(self, i):
-        ans = 0
-        while i > 0:
-            ans += self.tree[i]
-            i -= self.lowbit(i)
-        return ans
-
-    # 查询 [l, r] 的区间和
-    def range_sum(self, l, r):
-        return self.query(r) - self.query(l - 1)
-
-
-nums = [2, 1, 3, 4, 5, 2, 6, 7]
-
-bit = FenwickTree(len(nums))
-
-# 初始化
-for i, x in enumerate(nums, 1):
-    bit.update(i, x)
-
-print(bit.query(7))         # 23
-print(bit.range_sum(2, 5))  # 13
-
-bit.update(3, 2)
-
-print(bit.query(7))         # 25
-print(bit.range_sum(2, 5))  # 15
+    vector<int> tree;
+    int n;
+    int lowbit(int x){
+        return x&-x;
+    }
+    void update(int x,int val){
+        while(x<=n){
+            tree[x]+=val;
+            x+=lowbit(x);
+        }
+    }
+    int query(int x){
+        int ans=0;
+        while(x){
+            ans+=tree[x];
+            x-=lowbit(x);
+        }
+        return ans;
+    }
+    int range_sum(int l,int r){
+        return query(r)-query(l-1);
+    }
 ```
 
 ## 三、树状数组的进阶应用
