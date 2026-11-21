@@ -85,3 +85,45 @@
 ### 区间修改+单点查询
 
 可以维护差分数组，$`d[i]=a[i]-a[i-1]`$，区间修改给$`[l,r]`$增加$`x`$，只需要$`d[l]+=x`$，$`d[r+1]-=x`$。而单点查询$`a[i]=\sum_{j=1}^{i} d[j]`$。因此，用树状数组维护差分数组即可。
+
+## 四、相关题目
+
+### [303. 区域和检索 - 数组不可变](https://leetcode.cn/problems/range-sum-query-immutable/)
+
+这道题只需要使用前缀和即可，不需要树状数组。
+
+### [307. 区域和检索 - 数组可修改](https://leetcode.cn/problems/range-sum-query-mutable/)
+
+树状数组的模板题。
+
+### [3152. 特殊数组 II](https://leetcode.cn/problems/special-array-ii/)
+
+这道题的重点是要想明白树状数组中维护的是什么，这道题维护的是相邻元素奇偶性是否相同的0/1数组。因为不需要修改，所以使用前缀和更简单。
+
+### [1649. 通过指令创建有序数组](https://leetcode.cn/problems/create-sorted-array-through-instructions/)
+
+这道题树状数组维护的是元素出现次数，需要求动态排名。每次插入一个数$`x`$，需要知道：当前有多少个数严格小于它$`(query(x-1))`$；当前有多少数严格大于它$`i-query(x)`$
+
+### [315. 计算右侧小于当前元素的个数](https://leetcode.cn/problems/count-of-smaller-numbers-after-self/)
+
+离散化，创建原数组的副本；将副本排序；将副本去重；查找原数组的每一个元素在副本中的位置，位置即为排名，将其作为离散化后的值。然后从右往左遍历，计算右侧小于当前元素的个数$`(query(x-1))`$
+
+### [493. 翻转对](https://leetcode.cn/problems/reverse-pairs/)
+
+先离散化，对于倍数关系，关键是先计算原始数值的阈值，再通过二分查找将阈值转换为树状数组的查询边界。统计历史值落在指定值域中的数量：$`nums[i] \gt 2nums[j]`$
+
+### [327. 区间和的个数](https://leetcode.cn/problems/count-of-range-sum/)
+
+问题可以转化为统计历史前缀和落在指定值域中的数量。$`s[j]-upper\le s[i]\le s[j]-lower`$
+
+### [2426. 满足不等式的数对数目](https://leetcode.cn/problems/number-of-pairs-satisfying-inequality/)
+
+问题可以转化成统计历史数组差落在指定值域中的数量。$`nums1[i]-nums1[j]\le nums2[i]-nums2[j]+diff`$
+
+### [2659. 将数组清空](https://leetcode.cn/problems/make-array-empty/)
+
+上一个位置pre,下一个位置i。从pre到i要经过多少有效元素？树状数组维护已失效元素的位置下标。
+
+### [2179. 统计数组中好三元组数目](https://leetcode.cn/problems/count-good-triplets-in-an-array/)
+
+先把两个排列转化为相对位置关系，（$`nums2`$使用$`nums1`$的置换）。然后再统计每个位置左侧更小元素的数量$`(query(x))`$和右侧更大元素的数量：比$`nums[i]`$大的元素总共有$`n-1-nums[i]`$个，左边已经有$`i-query(x)`$，所以右边还有$`n-1-nums[i]-(i-query(x))`$。
