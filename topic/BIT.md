@@ -127,3 +127,20 @@
 ### [2179. 统计数组中好三元组数目](https://leetcode.cn/problems/count-good-triplets-in-an-array/)
 
 先把两个排列转化为相对位置关系，（$`nums2`$使用$`nums1`$的置换）。然后再统计每个位置左侧更小元素的数量$`(query(x))`$和右侧更大元素的数量：比$`nums[i]`$大的元素总共有$`n-1-nums[i]`$个，左边已经有$`i-query(x)`$，所以右边还有$`n-1-nums[i]-(i-query(x))`$。
+
+## 五、进阶内容
+
+### 进阶一：树状数组维护最大值
+
+#### [300. 最长递增子序列](https://leetcode.cn/problems/longest-increasing-subsequence/)
+
+#### [2407. 最长递增子序列 II](https://leetcode.cn/problems/longest-increasing-subsequence-ii/)
+
+### 进阶二：双树状数组：解决区间修改+区间求和问题
+
+引入差分数组
+
+### 进阶三：离线算法 + 二维偏序
+
+#### [2736. 最大和查询](https://leetcode.cn/problems/maximum-sum-queries/)
+
